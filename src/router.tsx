@@ -1,14 +1,60 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
+import { RootLayout } from "@/components/layout/RootLayout";
+import { ProtectedRoute } from "@/components/layout/ProtectedRoute";
+import { LoginPage } from "@/pages/LoginPage";
+import { DashboardPage } from "@/pages/DashboardPage";
+import { MasterPage } from "@/pages/MasterPage";
+import { HumanCapitalPage } from "@/pages/HumanCapitalPage";
+import { TAFPage } from "@/pages/TAFPage";
+import { CorpCompPage } from "@/pages/CorpCompPage";
+import { SettingsPage } from "@/pages/SettingsPage";
+import { ProfilePage } from "@/pages/ProfilePage";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
-    element: (
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
-        amet fugiat et ab, exercitationem, eaque qui, provident dolor in animi
-        ut aperiam soluta cumque hic reiciendis modi corporis. Cum, suscipit!
-      </p>
-    ),
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    element: <ProtectedRoute />,
+    children: [
+      {
+        element: <RootLayout />,
+        children: [
+          {
+            path: "/",
+            element: <Navigate to="/dashboard" replace />,
+          },
+          {
+            path: "/dashboard",
+            element: <DashboardPage />,
+          },
+          {
+            path: "/master",
+            element: <MasterPage />,
+          },
+          {
+            path: "/human-capital",
+            element: <HumanCapitalPage />,
+          },
+          {
+            path: "/taf",
+            element: <TAFPage />,
+          },
+          {
+            path: "/corpcomp",
+            element: <CorpCompPage />,
+          },
+          {
+            path: "/settings",
+            element: <SettingsPage />,
+          },
+          {
+            path: "/profile",
+            element: <ProfilePage />,
+          },
+        ],
+      },
+    ],
   },
 ]);
