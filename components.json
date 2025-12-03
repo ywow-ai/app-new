@@ -18,5 +18,7 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
-  "registries": {}
+  "registries": {
+    "@lytenyte": "https://www.1771technologies.com/r/{name}.json"
+  }
 }

@@ -6,16 +6,13 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { RouterProvider } from "react-router";
+import { router } from "@/router";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed velit
-        molestiae eveniet neque possimus vel placeat consectetur nihil repellat
-        atque doloribus, deleniti earum natus dolores quis pariatur vitae.
-        Itaque, iste?
-      </p>
+      <RouterProvider router={router} />
       <ModeToggle />
       <Button
         variant="outline"

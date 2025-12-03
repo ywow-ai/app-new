@@ -60,6 +60,7 @@ components=(
   "toggle"
   "tooltip"
   "typography"
+  "@lytenyte/lytenyte-core"
 )
 
 for component in "${components[@]}"; do

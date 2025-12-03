@@ -2,6 +2,18 @@
 # yarn lockfile v1
 
 
+"@1771technologies/lytenyte-core@^1.0.19":
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/@1771technologies/lytenyte-core/-/lytenyte-core-1.0.19.tgz#ead74af27c400b9485d18187ba6640e95c8a96bc"
+  integrity sha512-5CEIQnuMvRMiUDF5f0sQN5FLvcdvMrbsXTEOlzfKN161hRuKxJeqdcYz9JKUI45gjckR1R9GdeNW3ZUlbdz6Hw==
+  dependencies:
+    "@1771technologies/lytenyte-shared" "1.0.19"
+
+"@1771technologies/lytenyte-shared@1.0.19":
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/@1771technologies/lytenyte-shared/-/lytenyte-shared-1.0.19.tgz#6e0ee353f3668fbd2562bfbe555ace60ec9173f4"
+  integrity sha512-jVN2jVliNzHsIIGh8COFjGBSzFuSUDAr7BoeOzR7UsKWlxqoyvKPRilcTmh7252j8kbIyEyEJwDO6YI4YJZkpA==
+
 "@babel/code-frame@^7.27.1":
   version "7.27.1"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.27.1.tgz#200f715e66d52a23b221a9435534a91cc13ad5be"
