@@ -1,6 +1,5 @@
 import { Outlet } from "react-router";
 import { DesktopSidebar } from "./DesktopSidebar";
-import { MobileBottomNav } from "./MobileBottomNav";
 import { Header } from "./Header";
 import { MainContentArea } from "./MainContentArea";
 
@@ -20,9 +19,6 @@ export const RootLayout = () => {
           <Outlet />
         </MainContentArea>
       </div>
-
-      {/* Mobile Bottom Navigation */}
-      <MobileBottomNav />
     </div>
   );
 };

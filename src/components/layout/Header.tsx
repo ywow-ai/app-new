@@ -13,7 +13,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { MobileSidebarContent } from "./MobileSidebarContent";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -29,7 +36,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="flex h-16 items-center gap-4 px-4 md:px-6">
         {/* Mobile Menu Button */}
         {isMobile && (
@@ -40,20 +47,16 @@ export const Header = () => {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-[280px] p-0">
+              <SheetHeader className="sr-only">
+                <SheetTitle>Navigation Menu</SheetTitle>
+                <SheetDescription>
+                  Main navigation menu for the application
+                </SheetDescription>
+              </SheetHeader>
               <MobileSidebarContent />
             </SheetContent>
           </Sheet>
         )}
-
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">D</span>
-          </div>
-          <span className="font-semibold text-lg hidden sm:inline-block">
-            Dashboard
-          </span>
-        </div>
 
         {/* Search */}
         <div className="flex-1 max-w-md hidden sm:block">
@@ -75,7 +78,11 @@ export const Header = () => {
           </Button>
 
           {/* Notifications */}
-          <Button variant="ghost" size="icon" data-testid="notifications-button">
+          <Button
+            variant="ghost"
+            size="icon"
+            data-testid="notifications-button"
+          >
             <Bell className="h-5 w-5" />
           </Button>
 
